@@ -15,7 +15,7 @@ const styles = (theme: Theme) => createStyles({
 
 const style = withStyles(styles);
 
-class Hello extends React.Component<Props, {}> {
+class Hello extends React.PureComponent<Props> {
   render() {
       const {classes} = this.props;
     return (
@@ -26,7 +26,9 @@ class Hello extends React.Component<Props, {}> {
   }
 }
 
-export default style<Props>(Hello);
+export default style(Hello);
 
 
-type Props = WithStyles<typeof styles>;
+interface Props extends WithStyles<typeof styles> {
+    noop?: boolean;
+}

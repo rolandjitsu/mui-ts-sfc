@@ -5,6 +5,8 @@ import {
     MuiThemeProvider
 } from '@material-ui/core/styles';
 
+import Hello from './hello';
+
 const theme = createMuiTheme({
     typography: {
         useNextVariants: true
@@ -16,7 +18,7 @@ class App extends React.Component {
     return (
         <MuiThemeProvider theme={theme}>
             <div>
-                <h1>Welcome to React</h1>
+                <Hello noop />
             </div>
         </MuiThemeProvider>
     );
